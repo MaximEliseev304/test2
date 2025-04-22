@@ -17,52 +17,8 @@
     button { padding: 10px 20px; font-size: 1em; }
   </style>
 </head>
-  
-<script>
-  function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-  }
 
-  function shuffleQuestionsAndAnswers() {
-    const form = document.getElementById('testForm');
-    const questions = Array.from(form.querySelectorAll('.question'));
 
-    // Перемешать вопросы
-    shuffleArray(questions);
-    questions.forEach(q => form.appendChild(q));
-
-    // Перемешать radio/checkbox ответы
-    questions.forEach(q => {
-      const answersDiv = q.querySelector('.answers');
-      if (answersDiv) {
-        const labels = Array.from(answersDiv.querySelectorAll('label'));
-        shuffleArray(labels);
-        labels.forEach(label => answersDiv.appendChild(label));
-      }
-    });
-
-    // Перемешать строки таблиц в matching-вопросах
-    questions.forEach(q => {
-      const table = q.querySelector('table');
-      if (table) {
-        const rows = Array.from(table.querySelectorAll('tr'));
-        const header = rows[0].querySelector('select') ? null : rows[0];
-        const dataRows = header ? rows.slice(1) : rows;
-        shuffleArray(dataRows);
-        while (table.rows.length > 0) {
-          table.deleteRow(0);
-        }
-        if (header) table.appendChild(header);
-        dataRows.forEach(row => table.appendChild(row));
-      }
-    });
-  }
-
-  window.addEventListener('DOMContentLoaded', shuffleQuestionsAndAnswers);
-</script>
 
 <body>
   <h1>Тест по физической подготовке ВС РФ</h1>
@@ -372,47 +328,47 @@
 
 
     <!-- ВОПРОС 24: Matching -->
-    <div class="question" data-type="match">
-      <p>Укажите соответствие количества баллов оценке за выполнение одного физического упражнения для курсанта 3 курса и старше.</p>
-      <table>
-        <tr>
-          <td>65 баллов</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-            </select>
-          </td>
-          <td>А) «Удовлетворительно»</td>
-        </tr>
-        <tr>
-          <td>70 баллов</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-            </select>
-          </td>
-          <td>Б) «Хорошо»</td>
-        </tr>
-        <tr>
-          <td>75 баллов</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-            </select>
-          </td>
-          <td>В) «Отлично»</td>
-        </tr>
-      </table>
-    </div>
+<div class="question" data-type="match">
+  <p>24. Укажите соответствие количества баллов оценке за выполнение одного физического упражнения для курсанта 3 курса и старше.</p>
+  <table>
+    <tr data-correct="А">
+      <td>1) 65 баллов</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+        </select>
+      </td>
+      <td>А) «Удовлетворительно»</td>
+    </tr>
+    <tr data-correct="Б">
+      <td>2) 70 баллов</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+        </select>
+      </td>
+      <td>Б) «Хорошо»</td>
+    </tr>
+    <tr data-correct="В">
+      <td>3) 75 баллов</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+        </select>
+      </td>
+      <td>В) «Отлично»</td>
+    </tr>
+  </table>
+</div>
 
 <!-- ВОПРОС 25 -->
   <div class="question">
@@ -437,181 +393,181 @@
   </div>
 
     <!-- ВОПРОС 27: Matching Theory -->
-    <div class="question" data-type="match-theory">
-      <p>Оценка уровня теоретической подготовленности военнослужащих, проходящих военную службу на должностях курсантов.</p>
-      <table>
-        <tr>
-          <td>Менее 70 %</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>А) «Неудовлетворительно»</td>
-        </tr>
-        <tr>
-          <td>70 %</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>Б) «Удовлетворительно»</td>
-        </tr>
-        <tr>
-          <td>80 %</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>В) «Хорошо»</td>
-        </tr>
-        <tr>
-          <td>90 %</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>Г) «Отлично»</td>
-        </tr>
-      </table>
-    </div>
+<div class="question" data-type="match-theory">
+  <p>27. Оценка уровня теоретической подготовленности военнослужащих, проходящих военную службу на должностях курсантов.</p>
+  <table>
+    <tr data-correct="А">
+      <td>1) Менее 70 %</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>А) «Неудовлетворительно»</td>
+    </tr>
+    <tr data-correct="Б">
+      <td>2) 70 %</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>Б) «Удовлетворительно»</td>
+    </tr>
+    <tr data-correct="В">
+      <td>3) 80 %</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>В) «Хорошо»</td>
+    </tr>
+    <tr data-correct="Г">
+      <td>4) 90 %</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>Г) «Отлично»</td>
+    </tr>
+  </table>
+</div>
 
     <!-- ВОПРОС 28: Matching Method -->
-    <div class="question" data-type="match-method">
-      <p>Оценка уровня методической подготовленности военнослужащих, проходящих военную службу на должностях курсантов.</p>
-      <table>
-        <tr>
-          <td>Выполнено 2 и менее показателей</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>А) «Неудовлетворительно»</td>
-        </tr>
-        <tr>
-          <td>Выполнено 3 показателя</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>Б) «Удовлетворительно»</td>
-        </tr>
-        <tr>
-          <td>Выполнено 4 показателя</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>В) «Хорошо»</td>
-        </tr>
-        <tr>
-          <td>Выполнено 5 показателей</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>Г) «Отлично»</td>
-        </tr>
-      </table>
-    </div>
+<div class="question" data-type="match-method">
+  <p>28. Оценка уровня методической подготовленности военнослужащих, проходящих военную службу на должностях курсантов.</p>
+  <table>
+    <tr data-correct="А">
+      <td>1) Выполнено 2 и менее показателей</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>А) «Неудовлетворительно»</td>
+    </tr>
+    <tr data-correct="Б">
+      <td>2) Выполнено 3 показателя</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>Б) «Удовлетворительно»</td>
+    </tr>
+    <tr data-correct="В">
+      <td>3) Выполнено 4 показателя</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>В) «Хорошо»</td>
+    </tr>
+    <tr data-correct="Г">
+      <td>4) Выполнено 5 показателей</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>Г) «Отлично»</td>
+    </tr>
+  </table>
+</div>
 
     <!-- ВОПРОС 29: Matching Final Grade -->
-    <div class="question" data-type="match-final-grade">
-      <p>Как определяется оценка курсанту по учебной дисциплине "Физическая подготовка".</p>
-      <table>
-        <tr>
-          <td>Если более половины оценок удовлетворительные при отсутствии неудовлетворительных оценок, или если получена одна неудовлетворительная оценка при наличии отличной оценки за уровень физической подготовленности</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>А) «Удовлетворительно»</td>
-        </tr>
-        <tr>
-          <td>Если не менее двух оценок не ниже хорошей (в том числе за уровень физической подготовленности) и одна не ниже удовлетворительной</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>Б) «Хорошо»</td>
-        </tr>
-        <tr>
-          <td>Если не менее двух оценок отличные (в том числе за уровень физической подготовленности) и одна не ниже хорошей</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>В) «Отлично»</td>
-        </tr>
-        <tr>
-          <td>Если не выполнены условия для оценки «удовлетворительно».</td>
-          <td>
-            <select>
-              <option value="">Выберите...</option>
-              <option value="А">А</option>
-              <option value="Б">Б</option>
-              <option value="В">В</option>
-              <option value="Г">Г</option>
-            </select>
-          </td>
-          <td>Г) «Неудовлетворительно»</td>
-        </tr>
-      </table>
-    </div>
+<div class="question" data-type="match-final-grade">
+  <p>29. Как определяется оценка курсанту по учебной дисциплине "Физическая подготовка".</p>
+  <table>
+    <tr data-correct="А">
+      <td>1) Если более половины оценок удовлетворительные при отсутствии неудовлетворительных оценок, или если получена одна неудовлетворительная оценка при наличии отличной оценки за уровень физической подготовленности</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>А) «Удовлетворительно»</td>
+    </tr>
+    <tr data-correct="Б">
+      <td>2) Если не менее двух оценок не ниже хорошей (в том числе за уровень физической подготовленности) и одна не ниже удовлетворительной</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>Б) «Хорошо»</td>
+    </tr>
+    <tr data-correct="В">
+      <td>3) Если не менее двух оценок отличные (в том числе за уровень физической подготовленности) и одна не ниже хорошей</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>В) «Отлично»</td>
+    </tr>
+    <tr data-correct="Г">
+      <td>4) Если не выполнены условия для оценки «удовлетворительно».</td>
+      <td>
+        <select>
+          <option value="">Выберите...</option>
+          <option value="А">А</option>
+          <option value="Б">Б</option>
+          <option value="В">В</option>
+          <option value="Г">Г</option>
+        </select>
+      </td>
+      <td>Г) «Неудовлетворительно»</td>
+    </tr>
+  </table>
+</div>
 
     <!-- ВОПРОС 30 -->
     <div class="question" data-type="normal">
@@ -626,64 +582,102 @@
   <button type="button" onclick="checkAnswers()">Проверить ответы</button>
   <div id="result"></div>
 
-  <script>
-    function checkAnswers() {
-      const form = document.getElementById('testForm');
-      const questions = form.querySelectorAll('.question');
-      let correctCount = 0;
-
-      questions.forEach(q => {
-        const type = q.dataset.type;
-        if (type && type.startsWith('match')) {
-          // Matching questions
-          const selects = q.querySelectorAll('select');
-          let allMatch = true;
-          let correctOptions = [];
-          switch(type) {
-            case 'match': correctOptions = ['А','Б','В']; break;
-            case 'match-theory':
-            case 'match-method':
-            case 'match-final-grade':
-              correctOptions = ['А','Б','В','Г']; break;
-          }
-          selects.forEach((sel, idx) => {
-            sel.classList.remove('correct','incorrect');
-            if (sel.value === correctOptions[idx]) {
-              sel.classList.add('correct');
-            } else {
-              sel.classList.add('incorrect');
-              allMatch = false;
-            }
-          });
-          if (allMatch) correctCount++;
-        } else {
-          // Normal radio/checkbox questions
-          const inputs = q.querySelectorAll('input');
-          let isCorrect = true;
-          let answered = false;
-          inputs.forEach(input => {
-            const label = input.parentElement;
-            label.classList.remove('correct','incorrect');
-            const shouldBeChecked = input.value === '1';
-            if (input.checked) {
-              answered = true;
-              if (shouldBeChecked) {
-                label.classList.add('correct');
-              } else {
-                label.classList.add('incorrect');
-                isCorrect = false;
-              }
-            } else if (input.type === 'checkbox' && shouldBeChecked) {
-              isCorrect = false;
-            }
-          });
-          if (answered && isCorrect) correctCount++;
-        }
-      });
-
-      document.getElementById('result').innerText =
-        `Правильно отвечено на ${correctCount} вопросов из ${questions.length}`;
+<script>
+  // Функция для перемешивания массива
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
     }
-  </script>
+  }
+
+  // Перемешиваем вопросы, radio/checkbox и matching-строки (без правой колонки!)
+  function shuffleQuestionsAndAnswers() {
+    const form = document.getElementById('testForm');
+    const qs = Array.from(form.querySelectorAll('.question'));
+
+    // 1) Перемешиваем сами вопросы
+    shuffleArray(qs);
+    qs.forEach(q => form.appendChild(q));
+
+    // 2) Перемешиваем radio/checkbox-ответы внутри каждого вопроса
+    qs.forEach(q => {
+      const answers = q.querySelector('.answers');
+      if (!answers) return;
+      const labels = Array.from(answers.querySelectorAll('label'));
+      shuffleArray(labels);
+      labels.forEach(lbl => answers.appendChild(lbl));
+    });
+
+    // 3) Перемешиваем строки в matching-таблицах (НЕ трогаем правый столбец!)
+    qs.forEach(q => {
+      const table = q.querySelector('table');
+      if (!table) return;
+
+      const rows = Array.from(table.querySelectorAll('tr'));
+      shuffleArray(rows);
+      rows.forEach(r => table.appendChild(r));
+    });
+  }
+
+  // Проверка ответов
+  function checkAnswers() {
+    const qs = Array.from(document.querySelectorAll('.question'));
+    let correctCount = 0;
+
+    qs.forEach(q => {
+      const type = q.dataset.type || 'normal';
+      if (type.startsWith('match')) {
+        // Для matching: каждая строка — своя пара
+        const rows = Array.from(q.querySelectorAll('tr'));
+        let allOK = true;
+        rows.forEach(r => {
+          const sel = r.querySelector('select');
+          const user = sel.value;
+          // берём "А", "Б" и т.п. из первой буквы правой ячейки
+          const rightText = r.querySelector('td:last-child').innerText.trim();
+          const correct = rightText.charAt(0);
+          sel.classList.remove('correct', 'incorrect');
+          if (user === correct) sel.classList.add('correct');
+          else {
+            sel.classList.add('incorrect');
+            allOK = false;
+          }
+        });
+        if (allOK) correctCount++;
+
+      } else {
+        // Обычные radio/checkbox
+        const inputs = Array.from(q.querySelectorAll('input'));
+        let answered = false, ok = true;
+        inputs.forEach(inp => {
+          const lbl = inp.parentElement;
+          lbl.classList.remove('correct', 'incorrect');
+          const should = inp.value === '1';
+          if (inp.checked) {
+            answered = true;
+            if (should) lbl.classList.add('correct');
+            else {
+              lbl.classList.add('incorrect');
+              ok = false;
+            }
+          } else if (inp.type === 'checkbox' && should) {
+            ok = false;
+          }
+        });
+        if (answered && ok) correctCount++;
+      }
+    });
+
+    document.getElementById('result').innerText =
+      `Правильно отвечено на ${correctCount} из ${qs.length}`;
+  }
+
+  // Запускаем перемешивание при загрузке страницы
+  window.addEventListener('DOMContentLoaded', shuffleQuestionsAndAnswers);
+</script>
+
+
+
 </body>
 </html>
