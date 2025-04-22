@@ -18,8 +18,7 @@
   </style>
 </head>
   
-  <script>
-  // Функция для перемешивания элементов массива
+<script>
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -27,15 +26,15 @@
     }
   }
 
-  // Перемешать вопросы
   function shuffleQuestionsAndAnswers() {
     const form = document.getElementById('testForm');
     const questions = Array.from(form.querySelectorAll('.question'));
 
+    // Перемешать вопросы
     shuffleArray(questions);
     questions.forEach(q => form.appendChild(q));
 
-    // Перемешать варианты ответов внутри каждого вопроса
+    // Перемешать radio/checkbox ответы
     questions.forEach(q => {
       const answersDiv = q.querySelector('.answers');
       if (answersDiv) {
@@ -44,9 +43,24 @@
         labels.forEach(label => answersDiv.appendChild(label));
       }
     });
+
+    // Перемешать строки таблиц в matching-вопросах
+    questions.forEach(q => {
+      const table = q.querySelector('table');
+      if (table) {
+        const rows = Array.from(table.querySelectorAll('tr'));
+        const header = rows[0].querySelector('select') ? null : rows[0];
+        const dataRows = header ? rows.slice(1) : rows;
+        shuffleArray(dataRows);
+        while (table.rows.length > 0) {
+          table.deleteRow(0);
+        }
+        if (header) table.appendChild(header);
+        dataRows.forEach(row => table.appendChild(row));
+      }
+    });
   }
 
-  // Перемешать при загрузке страницы
   window.addEventListener('DOMContentLoaded', shuffleQuestionsAndAnswers);
 </script>
 
@@ -362,7 +376,7 @@
       <p>Укажите соответствие количества баллов оценке за выполнение одного физического упражнения для курсанта 3 курса и старше.</p>
       <table>
         <tr>
-          <td>1) 65 баллов</td>
+          <td>65 баллов</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -374,7 +388,7 @@
           <td>А) «Удовлетворительно»</td>
         </tr>
         <tr>
-          <td>2) 70 баллов</td>
+          <td>70 баллов</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -386,7 +400,7 @@
           <td>Б) «Хорошо»</td>
         </tr>
         <tr>
-          <td>3) 75 баллов</td>
+          <td>75 баллов</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -427,7 +441,7 @@
       <p>Оценка уровня теоретической подготовленности военнослужащих, проходящих военную службу на должностях курсантов.</p>
       <table>
         <tr>
-          <td>1) Менее 70 %</td>
+          <td>Менее 70 %</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -440,7 +454,7 @@
           <td>А) «Неудовлетворительно»</td>
         </tr>
         <tr>
-          <td>2) 70 %</td>
+          <td>70 %</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -453,7 +467,7 @@
           <td>Б) «Удовлетворительно»</td>
         </tr>
         <tr>
-          <td>3) 80 %</td>
+          <td>80 %</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -466,7 +480,7 @@
           <td>В) «Хорошо»</td>
         </tr>
         <tr>
-          <td>4) 90 %</td>
+          <td>90 %</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -486,7 +500,7 @@
       <p>Оценка уровня методической подготовленности военнослужащих, проходящих военную службу на должностях курсантов.</p>
       <table>
         <tr>
-          <td>1) Выполнено 2 и менее показателей</td>
+          <td>Выполнено 2 и менее показателей</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -499,7 +513,7 @@
           <td>А) «Неудовлетворительно»</td>
         </tr>
         <tr>
-          <td>2) Выполнено 3 показателя</td>
+          <td>Выполнено 3 показателя</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -512,7 +526,7 @@
           <td>Б) «Удовлетворительно»</td>
         </tr>
         <tr>
-          <td>3) Выполнено 4 показателя</td>
+          <td>Выполнено 4 показателя</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -525,7 +539,7 @@
           <td>В) «Хорошо»</td>
         </tr>
         <tr>
-          <td>4) Выполнено 5 показателей</td>
+          <td>Выполнено 5 показателей</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -545,7 +559,7 @@
       <p>Как определяется оценка курсанту по учебной дисциплине "Физическая подготовка".</p>
       <table>
         <tr>
-          <td>1) Если более половины оценок удовлетворительные при отсутствии неудовлетворительных оценок, или если получена одна неудовлетворительная оценка при наличии отличной оценки за уровень физической подготовленности</td>
+          <td>Если более половины оценок удовлетворительные при отсутствии неудовлетворительных оценок, или если получена одна неудовлетворительная оценка при наличии отличной оценки за уровень физической подготовленности</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -558,7 +572,7 @@
           <td>А) «Удовлетворительно»</td>
         </tr>
         <tr>
-          <td>2) Если не менее двух оценок не ниже хорошей (в том числе за уровень физической подготовленности) и одна не ниже удовлетворительной</td>
+          <td>Если не менее двух оценок не ниже хорошей (в том числе за уровень физической подготовленности) и одна не ниже удовлетворительной</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -571,7 +585,7 @@
           <td>Б) «Хорошо»</td>
         </tr>
         <tr>
-          <td>3) Если не менее двух оценок отличные (в том числе за уровень физической подготовленности) и одна не ниже хорошей</td>
+          <td>Если не менее двух оценок отличные (в том числе за уровень физической подготовленности) и одна не ниже хорошей</td>
           <td>
             <select>
               <option value="">Выберите...</option>
@@ -584,7 +598,7 @@
           <td>В) «Отлично»</td>
         </tr>
         <tr>
-          <td>4) Если не выполнены условия для оценки «удовлетворительно».</td>
+          <td>Если не выполнены условия для оценки «удовлетворительно».</td>
           <td>
             <select>
               <option value="">Выберите...</option>
