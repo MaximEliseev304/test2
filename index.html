@@ -17,6 +17,39 @@
     button { padding: 10px 20px; font-size: 1em; }
   </style>
 </head>
+  
+  <script>
+  // Функция для перемешивания элементов массива
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  // Перемешать вопросы
+  function shuffleQuestionsAndAnswers() {
+    const form = document.getElementById('testForm');
+    const questions = Array.from(form.querySelectorAll('.question'));
+
+    shuffleArray(questions);
+    questions.forEach(q => form.appendChild(q));
+
+    // Перемешать варианты ответов внутри каждого вопроса
+    questions.forEach(q => {
+      const answersDiv = q.querySelector('.answers');
+      if (answersDiv) {
+        const labels = Array.from(answersDiv.querySelectorAll('label'));
+        shuffleArray(labels);
+        labels.forEach(label => answersDiv.appendChild(label));
+      }
+    });
+  }
+
+  // Перемешать при загрузке страницы
+  window.addEventListener('DOMContentLoaded', shuffleQuestionsAndAnswers);
+</script>
+
 <body>
   <h1>Тест по физической подготовке ВС РФ</h1>
   <form id="testForm">
