@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Тест по физической подготовке ВС РФ</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    h1 { text-align: center; }
+    .question { margin-bottom: 20px; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+    .question p { font-weight: bold; }
+    .answers label { display: block; margin-left: 20px; padding: 2px; }
+    .correct { background-color: #d4edda; } /* зелёный фон */
+    .incorrect { background-color: #f8d7da; } /* красный фон */
+    select.correct { background-color: #d4edda; }
+    select.incorrect { background-color: #f8d7da; }
+    #result { font-size: 1.2em; font-weight: bold; margin-top: 30px; }
+    button { padding: 10px 20px; font-size: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Тест по физической подготовке ВС РФ</h1>
+  <form id="testForm">
+
+  <!-- ВОПРОС 1 -->
+  <div class="question">
+    <p>1. Каким руководящим документом определен порядок организации физической подготовки военнослужащих ВС РФ?</p>
+    <div class="answers">
+      <label><input type="radio" name="q1" value="1"> Приказ МО РФ № 230 от 20.04.2023 г. (НФП-2023)</label>
+      <label><input type="radio" name="q1" value="0"> Приказ МО РФ № 308 от 30.05.2022 г.</label>
+      <label><input type="radio" name="q1" value="0"> Федеральный закон № 329-ФЗ от 4.12.2007 г.</label>
+    </div>
+  </div>
+
+  <!-- ВОПРОС 2 -->
+  <div class="question">
+    <p>2. Что является целью физической подготовки?</p>
+    <div class="answers">
+      <label><input type="radio" name="q2" value="1"> Успешное выполнение служебных обязанностей</label>
+      <label><input type="radio" name="q2" value="0"> Положительная оценка по физической подготовке</label>
+      <label><input type="radio" name="q2" value="0"> Уровень физической подготовленности</label>
+    </div>
+  </div>
+
+  <!-- ВОПРОС 3 -->
+  <div class="question">
+    <p>3. Перечислите задачи физической подготовки</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q3" value="1"> Развитие физических качеств</label>
+      <label><input type="checkbox" name="q3" value="1"> Совершенствование двигательных навыков</label>
+      <label><input type="checkbox" name="q3" value="1"> Сплочение воинского коллектива</label>
+      <label><input type="checkbox" name="q3" value="0"> Получение теоретических знаний</label>
+      <label><input type="checkbox" name="q3" value="0"> Воспитание морально-волевых качеств</label>
+    </div>
+  </div>
+
+  <!-- ВОПРОС 4 -->
+  <div class="question">
+    <p>4. Укажите возрастные группы военнослужащих мужского пола по контракту</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q4" value="0"> До 20 лет</label>
+      <label><input type="checkbox" name="q4" value="1"> До 25 лет</label>
+      <label><input type="checkbox" name="q4" value="1"> 25-29 лет</label>
+      <label><input type="checkbox" name="q4" value="1"> 30-34 года</label>
+      <label><input type="checkbox" name="q4" value="1"> 35-39 лет</label>
+      <label><input type="checkbox" name="q4" value="1"> 40-44 года</label>
+      <label><input type="checkbox" name="q4" value="1"> 45-49 лет</label>
+      <label><input type="checkbox" name="q4" value="1"> 50-54 года</label>
+      <label><input type="checkbox" name="q4" value="1"> 55-59 лет</label>
+      <label><input type="checkbox" name="q4" value="1"> 60 лет и старше</label>
+      <label><input type="checkbox" name="q4" value="0"> 60-64 года</label>
+      <label><input type="checkbox" name="q4" value="0"> 65 лет и старше</label>
+    </div>
+  </div>
+
+  <!-- ВОПРОС 5 -->
+  <div class="question">
+    <p>5. В каких формах проводится физическая подготовка в ВС РФ?</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q5" value="1"> Учебные занятия</label>
+      <label><input type="checkbox" name="q5" value="1"> Утренняя зарядка</label>
+      <label><input type="checkbox" name="q5" value="1"> Спортивно-массовая работа</label>
+      <label><input type="checkbox" name="q5" value="1"> Физическая тренировка в УБД</label>
+      <label><input type="checkbox" name="q5" value="0"> Зачеты по физподготовке</label>
+      <label><input type="checkbox" name="q5" value="0"> Военно-спортивные соревнования</label>
+      <label><input type="checkbox" name="q5" value="0"> Проверка уровня подготовки</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 6 -->
+  <div class="question">
+    <p>6. Меры предупреждения травматизма при занятиях физической подготовкой (согласно Наставлению по физической подготовке в ВС РФ).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q6" value="1"> Дисциплинированность военнослужащих, знание ими приемов страховки и самостраховки, мер по предупреждению травматизма.</label>
+      <label><input type="checkbox" name="q6" value="1"> Контроль за соблюдением установленных норм и требований безопасности при проведении физической подготовки.</label>
+      <label><input type="checkbox" name="q6" value="1"> Подготовка мест проведения физической подготовки.</label>
+      <label><input type="checkbox" name="q6" value="1"> Проверка исправности спортивных снарядов, тренажеров, оборудования, инвентаря и иных материальных средств, используемых при проведении физической подготовки.</label>
+      <label><input type="checkbox" name="q6" value="1"> Соблюдение последовательности обучения физическим упражнениям.</label>
+      <label><input type="checkbox" name="q6" value="1"> Соблюдение военнослужащими техники выполнения физических упражнений.</label>
+      <label><input type="checkbox" name="q6" value="1"> Помощью и страховкой при выполнении физических упражнений на спортивных снарядах и тренажерах.</label>
+      <label><input type="checkbox" name="q6" value="1"> Контроль за состоянием военнослужащих при выполнении физических упражнений.</label>
+      <label><input type="checkbox" name="q6" value="0"> Четкое соблюдение структуры учебно-тренировочного занятия;</label>
+      <label><input type="checkbox" name="q6" value="0"> Наличие плана учебного тренировочного занятия и четкое его соблюдение.</label>
+    </div>
+  </div>
+
+  <!-- ВОПРОС 7 -->
+  <div class="question">
+    <p>7. Для чего предназначена спортивно-массовая работа в ВС РФ в соответствии с НФП?<br>(Выберете правильный ответ из предложенных).</p>
+    <div class="answers">
+      <label><input type="radio" name="q7" value="1"> Для проведения с военнослужащими массовых спортивных мероприятий и пропаганды здорового образа жизни.</label>
+      <label><input type="radio" name="q7" value="0"> Для проведения занятий по физической подготовке</label>
+      <label><input type="radio" name="q7" value="0"> Для развития военно-прикладных двигательных навыков в составе подразделения</label>
+    </div>
+  </div>
+
+  <!-- ВОПРОС 8 -->
+  <div class="question">
+    <p>8. По каким темам проводятся учебно-тренировочные занятия
+по физической подготовке в ВС РФ (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q8" value="1"> Сила.</label>
+      <label><input type="checkbox" name="q8" value="1"> Быстрота.</label>
+      <label><input type="checkbox" name="q8" value="1"> Выносливость.</label>
+      <label><input type="checkbox" name="q8" value="1"> Ловкость.</label>
+      <label><input type="checkbox" name="q8" value="1"> Ускоренное передвижение.</label>
+      <label><input type="checkbox" name="q8" value="1"> Преодоление препятствий.</label>
+      <label><input type="checkbox" name="q8" value="1"> Рукопашный бой.</label>
+      <label><input type="checkbox" name="q8" value="1"> Военно-прикладное плавание.</label>
+      <label><input type="checkbox" name="q8" value="1"> Специальные приемы и действия.</label>
+      <label><input type="checkbox" name="q8" value="1"> Комплексное занятие.</label>
+      <label><input type="checkbox" name="q8" value="0"> Легкая атлетика и ускоренное передвижение.</label>
+      <label><input type="checkbox" name="q8" value="0"> Гимнастика и атлетическая подготовка.</label>
+      <label><input type="checkbox" name="q8" value="0"> Спортивные и подвижные игры.</label>
+      <label><input type="checkbox" name="q8" value="0"> Плавание</label>
+    </div>
+  </div>
+
+  <!-- ВОПРОС 9 -->
+  <div class="question">
+    <p>9. Из каких частей состоит учебно-тренировочное занятие.<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q9" value="1"> Подготовительная</label>
+      <label><input type="checkbox" name="q9" value="1"> Основная</label>
+      <label><input type="checkbox" name="q9" value="1"> Заключительная</label>
+      <label><input type="checkbox" name="q9" value="0"> Тренировка</label>
+      <label><input type="checkbox" name="q9" value="0"> Теоретический опрос</label>
+      <label><input type="checkbox" name="q9" value="0"> Завершающая</label>
+      <label><input type="checkbox" name="q9" value="0"> Заминка</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 10 -->
+  <div class="question">
+    <p>10. Кто является руководителем утренней физической зарядки
+в подразделении.<br>(Выберете правильный ответ из предложенных).</p>
+    <div class="answers">
+      <label><input type="radio" name="q10" value="1"> Во взводе (ему равному) проводится под руководством заместителя командира взвода или командира отделения</label>
+      <label><input type="radio" name="q10" value="0"> Во  взводе проводится спортивным организатором взвода (ему равному)</label>
+      <label><input type="radio" name="q10" value="0"> В роте проводится командиром роты  (ему равному)</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 11 -->
+  <div class="question">
+    <p>11.Продолжительность утренней физической зарядки для курсантов в образовательных организациях (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильный ответ из предложенных).</p>
+    <div class="answers">
+      <label><input type="radio" name="q11" value="1"> 30 минут</label>
+      <label><input type="radio" name="q11" value="0"> 50 минут</label>
+      <label><input type="radio" name="q11" value="0"> 20 минут</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 12 -->
+  <div class="question">
+    <p>12. Из каких частей состоит учебно-тренировочное занятие.<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q12" value="1"> Ознакомление</label>
+      <label><input type="checkbox" name="q12" value="1"> Разучивание</label>
+      <label><input type="checkbox" name="q12" value="1"> Тренировка</label>
+      <label><input type="checkbox" name="q12" value="0"> Рассказ</label>
+      <label><input type="checkbox" name="q12" value="0"> С помощью подготовительных упражнений</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 13 -->
+  <div class="question">
+    <p>13.Последовательность ознакомления военнослужащего с физическим упражнением (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильный ответ из предложенных).</p>
+    <div class="answers">
+      <label><input type="radio" name="q13" value="1"> Назвать физическое упражнение, показать технику выполнения упражнения и объяснить его предназначение.</label>
+      <label><input type="radio" name="q13" value="0"> Показать упражнение, назвать упражнение, определит способ обучения</label>
+      <label><input type="radio" name="q13" value="0"> Назвать упражнение, показать упражнение, приступить к выполнению упражнения</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 14 -->
+  <div class="question">
+    <p>14. Перечислите способы разучивания физического упражнения. (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q14" value="1"> В целом.</label>
+      <label><input type="checkbox" name="q14" value="1"> По частям.</label>
+      <label><input type="checkbox" name="q14" value="1"> По разделениям.</label>
+      <label><input type="checkbox" name="q14" value="1"> С помощью подготовительных физических упражнений.</label>
+      <label><input type="checkbox" name="q14" value="0"> Повторный.</label>
+      <label><input type="checkbox" name="q14" value="0"> Способ максимальных усилий.</label>
+      <label><input type="checkbox" name="q14" value="0"> Рассказ.</label>
+      <label><input type="checkbox" name="q14" value="0"> Показ.</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 15 -->
+  <div class="question">
+    <p>15. Перечислите основные физические качества.<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q15" value="1"> Сила</label>
+      <label><input type="checkbox" name="q15" value="1"> Быстрота</label>
+      <label><input type="checkbox" name="q15" value="1"> Выносливость</label>
+      <label><input type="checkbox" name="q15" value="1"> Ловкость</label>
+      <label><input type="checkbox" name="q15" value="0"> Скоростная выносливость</label>
+      <label><input type="checkbox" name="q15" value="0"> Координация</label>
+      <label><input type="checkbox" name="q15" value="0"> Гибкость</label>
+      <label><input type="checkbox" name="q15" value="0"> Силовая выносливость</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 16 -->
+  <div class="question">
+    <p>16. Перечислите основные физические качества.<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q16" value="1"> Равномерный</label>
+      <label><input type="checkbox" name="q16" value="1"> Повторный</label>
+      <label><input type="checkbox" name="q16" value="1"> Интервальный</label>
+      <label><input type="checkbox" name="q16" value="1"> Переменный</label>
+      <label><input type="checkbox" name="q16" value="1"> Максимальных усилий</label>
+      <label><input type="checkbox" name="q16" value="1"> Контрольный</label>
+      <label><input type="checkbox" name="q16" value="1"> Соревновательный</label>
+      <label><input type="checkbox" name="q16" value="0"> Аутотренинг</label>
+      <label><input type="checkbox" name="q16" value="0"> Визуализационный</label>
+      <label><input type="checkbox" name="q16" value="0"> Мотивационный</label>
+      <label><input type="checkbox" name="q16" value="0"> Альтернативный</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 17 -->
+  <div class="question">
+    <p>17. Перечислите общие физические упражнения (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q17" value="1"> Подтягивание на перекладине</label>
+      <label><input type="checkbox" name="q17" value="1"> Бег на 100 м</label>
+      <label><input type="checkbox" name="q17" value="1"> Бег на 1 км</label>
+      <label><input type="checkbox" name="q17" value="0"> Упор на предплечьях</label>
+      <label><input type="checkbox" name="q17" value="0"> Вис на перекладине</label>
+      <label><input type="checkbox" name="q17" value="0"> Бег на 800 м с оружием</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 18 -->
+  <div class="question">
+    <p>18. Перечислите специальные физические упражнения (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q18" value="1"> Метание гранат на точность</label>
+      <label><input type="checkbox" name="q18" value="1"> Поднимание ящика для боеприпасов</label>
+      <label><input type="checkbox" name="q18" value="1"> Бег на 60 м в экипировке с автоматом</label>
+      <label><input type="checkbox" name="q18" value="0"> Подъем силой на перекладине</label>
+      <label><input type="checkbox" name="q18" value="0"> Челночный бег 10х10 м</label>
+      <label><input type="checkbox" name="q18" value="0"> Бег на 5 км</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 19 -->
+  <div class="question">
+    <p>19. Выберете упражнения для оценки физического качества быстрота (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q19" value="1"> Бег на 100 м</label>
+      <label><input type="checkbox" name="q19" value="1"> Челночный бег 10х10 м</label>
+      <label><input type="checkbox" name="q19" value="0"> Челночный бег с оружием 4х100 м</label>
+      <label><input type="checkbox" name="q19" value="0"> Бег в экипировке на 60 м с автоматом</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 20 -->
+  <div class="question">
+    <p>20. Выберете упражнения для оценки физического качества выносливость (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q20" value="1"> Бег на 1 км</label>
+      <label><input type="checkbox" name="q20" value="1"> Бег на 400 м</label>
+      <label><input type="checkbox" name="q20" value="1"> Восхождение на платформу (тумбу)</label>
+      <label><input type="checkbox" name="q20" value="0"> Марш-бросок на 5 км</label>
+      <label><input type="checkbox" name="q20" value="0"> Общее контрольное упражнение на единой полосе препятствий</label>
+      <label><input type="checkbox" name="q20" value="0"> Бег на 800 м с оружием</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 21 -->
+  <div class="question">
+    <p>21. Выберете упражнения для оценки физического качества сила (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильные ответы из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q21" value="1"> Подтягивание на перекладине</label>
+      <label><input type="checkbox" name="q21" value="1"> Подъем силой на перекладине</label>
+      <label><input type="checkbox" name="q21" value="1"> Подъем переворотом на перекладине</label>
+      <label><input type="checkbox" name="q21" value="1"> Поднимание ног к перекладине</label>
+      <label><input type="checkbox" name="q21" value="0"> Вис на перекладине</label>
+      <label><input type="checkbox" name="q21" value="0"> Упор на предплечьях</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 22 -->
+  <div class="question">
+    <p>22. Какое количество физических упражнений выполняют курсанты 1-х курсов при оценке уровня физической подготовленности.<br>(Выберете правильный ответ из предложенных).</p>
+    <div class="answers">
+      <label><input type="radio" name="q22" value="1"> 4 упражнений</label>
+      <label><input type="radio" name="q22" value="0"> 3 упражнения</label>
+      <label><input type="radio" name="q22" value="0"> 5 упражнений</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 23 -->
+  <div class="question">
+    <p>23. Какое количество физических упражнений выполняют курсанты 2-х курсов и старше при оценке уровня физической подготовленности.<br>(Выберете правильный ответ из предложенных).</p>
+    <div class="answers">
+      <label><input type="radio" name="q23" value="1"> 5 упражнений</label>
+      <label><input type="radio" name="q23" value="0"> 4 упражнения</label>
+      <label><input type="radio" name="q23" value="0"> 3 упражнения</label>
+    </div>
+  </div>
+
+
+    <!-- ВОПРОС 24: Matching -->
+    <div class="question" data-type="match">
+      <p>24. Укажите соответствие количества баллов оценке за выполнение одного физического упражнения для курсанта 3 курса и старше.</p>
+      <table>
+        <tr>
+          <td>1) 65 баллов</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+            </select>
+          </td>
+          <td>А) «Удовлетворительно»</td>
+        </tr>
+        <tr>
+          <td>2) 70 баллов</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+            </select>
+          </td>
+          <td>Б) «Хорошо»</td>
+        </tr>
+        <tr>
+          <td>3) 75 баллов</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+            </select>
+          </td>
+          <td>В) «Отлично»</td>
+        </tr>
+      </table>
+    </div>
+
+<!-- ВОПРОС 25 -->
+  <div class="question">
+    <p>25. Какое минимальное количество баллов необходимо набрать в одном физическом упражнении при оценке уровня физической подготовленности для курсанта 3-го курса и старше.<br>(Выберете правильный ответ из предложенных).</p>
+    <div class="answers">
+      <label><input type="radio" name="q25" value="0"> 30 баллов</label>
+      <label><input type="radio" name="q25" value="0"> 34 балла</label>
+      <label><input type="radio" name="q25" value="0"> 36 баллов</label>
+      <label><input type="radio" name="q25" value="1"> 38 баллов</label>
+    </div>
+  </div>
+
+<!-- ВОПРОС 26 -->
+  <div class="question">
+    <p>26. В каких случаях уровень физической подготовленности военнослужащего оценивается неудовлетворительно (согласно Наставлению по физической подготовке в ВС РФ).<br>(Выберете правильный ответ из предложенных).</p>
+    <div class="answers">
+      <label><input type="checkbox" name="q26" value="1"> Физическое упражнение не выполнено;</label>
+      <label><input type="checkbox" name="q26" value="1"> Не набран минимум баллов в одном физическом упражнении;</label>
+      <label><input type="checkbox" name="q26" value="1"> Набранная сумма баллов ниже суммы баллов на оценку «удовлетворительно»</label>
+      <label><input type="checkbox" name="q26" value="1"> Военнослужащий отсутствовал на проверке по физической подготовке без уважительной причины или отказался без уважительной причины от выполнения физического упражнения</label>
+    </div>
+  </div>
+
+    <!-- ВОПРОС 27: Matching Theory -->
+    <div class="question" data-type="match-theory">
+      <p>27. Оценка уровня теоретической подготовленности военнослужащих, проходящих военную службу на должностях курсантов.</p>
+      <table>
+        <tr>
+          <td>1) Менее 70 %</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>А) «Неудовлетворительно»</td>
+        </tr>
+        <tr>
+          <td>2) 70 %</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>Б) «Удовлетворительно»</td>
+        </tr>
+        <tr>
+          <td>3) 80 %</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>В) «Хорошо»</td>
+        </tr>
+        <tr>
+          <td>4) 90 %</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>Г) «Отлично»</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ВОПРОС 28: Matching Method -->
+    <div class="question" data-type="match-method">
+      <p>28. Оценка уровня методической подготовленности военнослужащих, проходящих военную службу на должностях курсантов.</p>
+      <table>
+        <tr>
+          <td>1) Выполнено 2 и менее показателей</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>А) «Неудовлетворительно»</td>
+        </tr>
+        <tr>
+          <td>2) Выполнено 3 показателя</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>Б) «Удовлетворительно»</td>
+        </tr>
+        <tr>
+          <td>3) Выполнено 4 показателя</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>В) «Хорошо»</td>
+        </tr>
+        <tr>
+          <td>4) Выполнено 5 показателей</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>Г) «Отлично»</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ВОПРОС 29: Matching Final Grade -->
+    <div class="question" data-type="match-final-grade">
+      <p>29. Как определяется оценка курсанту по учебной дисциплине "Физическая подготовка".</p>
+      <table>
+        <tr>
+          <td>1) Если более половины оценок удовлетворительные при отсутствии неудовлетворительных оценок, или если получена одна неудовлетворительная оценка при наличии отличной оценки за уровень физической подготовленности</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>А) «Удовлетворительно»</td>
+        </tr>
+        <tr>
+          <td>2) Если не менее двух оценок не ниже хорошей (в том числе за уровень физической подготовленности) и одна не ниже удовлетворительной</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>Б) «Хорошо»</td>
+        </tr>
+        <tr>
+          <td>3) Если не менее двух оценок отличные (в том числе за уровень физической подготовленности) и одна не ниже хорошей</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>В) «Отлично»</td>
+        </tr>
+        <tr>
+          <td>4) Если не выполнены условия для оценки «удовлетворительно».</td>
+          <td>
+            <select>
+              <option value="">Выберите...</option>
+              <option value="А">А</option>
+              <option value="Б">Б</option>
+              <option value="В">В</option>
+              <option value="Г">Г</option>
+            </select>
+          </td>
+          <td>Г) «Неудовлетворительно»</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- ВОПРОС 30 -->
+    <div class="question" data-type="normal">
+      <p>30. Допускается ли военнослужащий, отнесенный к IIIа или IIIб группе здоровья к проверке уровня физической подготовленности?</p>
+      <div class="answers">
+        <label><input type="radio" name="q30" value="1"> По согласованию с врачом воинской части допускается к проверке уровня физической подготовленности ...</label>
+        <label><input type="radio" name="q30" value="0"> К проверке уровня физической подготовленности не допускается.</label>
+      </div>
+    </div>
+
+  </form>
+  <button type="button" onclick="checkAnswers()">Проверить ответы</button>
+  <div id="result"></div>
+
+  <script>
+    function checkAnswers() {
+      const form = document.getElementById('testForm');
+      const questions = form.querySelectorAll('.question');
+      let correctCount = 0;
+
+      questions.forEach(q => {
+        const type = q.dataset.type;
+        if (type && type.startsWith('match')) {
+          // Matching questions
+          const selects = q.querySelectorAll('select');
+          let allMatch = true;
+          let correctOptions = [];
+          switch(type) {
+            case 'match': correctOptions = ['А','Б','В']; break;
+            case 'match-theory':
+            case 'match-method':
+            case 'match-final-grade':
+              correctOptions = ['А','Б','В','Г']; break;
+          }
+          selects.forEach((sel, idx) => {
+            sel.classList.remove('correct','incorrect');
+            if (sel.value === correctOptions[idx]) {
+              sel.classList.add('correct');
+            } else {
+              sel.classList.add('incorrect');
+              allMatch = false;
+            }
+          });
+          if (allMatch) correctCount++;
+        } else {
+          // Normal radio/checkbox questions
+          const inputs = q.querySelectorAll('input');
+          let isCorrect = true;
+          let answered = false;
+          inputs.forEach(input => {
+            const label = input.parentElement;
+            label.classList.remove('correct','incorrect');
+            const shouldBeChecked = input.value === '1';
+            if (input.checked) {
+              answered = true;
+              if (shouldBeChecked) {
+                label.classList.add('correct');
+              } else {
+                label.classList.add('incorrect');
+                isCorrect = false;
+              }
+            } else if (input.type === 'checkbox' && shouldBeChecked) {
+              isCorrect = false;
+            }
+          });
+          if (answered && isCorrect) correctCount++;
+        }
+      });
+
+      document.getElementById('result').innerText =
+        `Правильно отвечено на ${correctCount} вопросов из ${questions.length}`;
+    }
+  </script>
+</body>
+</html>
